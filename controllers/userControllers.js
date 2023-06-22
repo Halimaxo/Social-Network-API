@@ -1,8 +1,9 @@
-const { User, Thought } = require("../models/index");
+const { User, Thought } = require("../models");
 
 const userControllers = {
   async getAllUsers(req, res) {
     try {
+      console.log(userControllers);
       const allUsers = await User.findAll();
       res.json(allUsers);
     } catch (Error) {
