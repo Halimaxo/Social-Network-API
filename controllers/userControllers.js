@@ -4,7 +4,7 @@ const userControllers = {
   async getAllUsers(req, res) {
     try {
       console.log(userControllers);
-      const allUsers = await User.findAll();
+      const allUsers = await User.find();
       res.json(allUsers);
     } catch (Error) {
       res.status(500).json(Error);
