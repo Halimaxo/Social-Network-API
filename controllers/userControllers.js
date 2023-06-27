@@ -51,6 +51,7 @@ const userControllers = {
       const deleteUser = await User.findOneAndDelete({
         _id: req.params.userId,
       });
+      res.json(req.params.userId);
     } catch (Error) {
       res.status(500).json(Error);
     }

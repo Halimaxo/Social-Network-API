@@ -29,7 +29,7 @@ const thoughtControllers = {
   },
   async updateThought(req, res) {
     try {
-      const updateThought = await User.findOneAndUpdate(
+      const updateThought = await Thought.findOneAndUpdate(
         {
           _id: req.params.thoughtId,
         },
@@ -47,9 +47,10 @@ const thoughtControllers = {
   },
   async deleteThought(req, res) {
     try {
-      const deleteThought = await User.findOneAndDelete({
+      const deleteThought = await Thought.findOneAndDelete({
         _id: req.params.thoughtId,
       });
+      res.json(req.params.thoughtId);
     } catch (Error) {
       res.status(500).json(Error);
     }
